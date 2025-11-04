@@ -156,11 +156,11 @@ export const AddBalanceModal: React.FC<AddBalanceModalProps> = ({
         <div className="p-4 overflow-y-auto flex-1">
           {/* Mensagem personalizada se houver */}
           {message && (
-            <div className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30 mb-4">
+            <div className="bg-blue-50 rounded-xl p-3 border border-blue-300 mb-4">
               <div className="flex items-start gap-2">
-                <Shield className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                <Shield className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-blue-200 text-xs leading-relaxed">
+                  <p className="text-blue-700 text-xs leading-relaxed">
                     {message}
                   </p>
                 </div>
