@@ -234,7 +234,7 @@ export const GameDashboard: React.FC<GameDashboardProps> = ({ user }) => {
               </div>
               <div className="flex-1">
                 <p className="text-white font-bold text-sm">Bônus Creditado!</p>
-                <p className="text-white/90 text-xs">R$ 4,90 + 1 raspadinha</p>
+                <p className="text-white/90 text-xs">R$ 14,70 + 3 raspadinhas</p>
               </div>
               <button
                 onClick={() => setShowBonusNotification(false)}
