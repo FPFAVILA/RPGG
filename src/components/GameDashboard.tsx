@@ -386,7 +386,7 @@ export const GameDashboard: React.FC<GameDashboardProps> = ({ user }) => {
         onAddBalance={handleAddBalance}
         suggestedAmount={kycDepositAmount || getSuggestedAmount()}
         message={kycDepositAmount ? (
-          'Deposito de verificacao - R$ 14,70 sera creditado ao seu saldo apos confirmacao'
+          'Apos verificacao, voce podera sacar todo o seu saldo disponivel. O deposito de R$ 14,70 sera creditado automaticamente.'
         ) : !canPlay ? (
           `Você precisa de mais R$ ${missingAmount.toFixed(2).replace('.', ',')} para jogar a próxima rodada`
         ) : undefined}
