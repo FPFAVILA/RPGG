@@ -118,6 +118,22 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onRegister }
     validateField('email', formData.email);
     validateField('password', formData.password);
 
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim() || formData.name.trim().length < 3 || !/^[a-zA-ZÀ-ÿ\s]+$/.test(formData.name)) {
+      newErrors.name = formData.name.trim() ? (formData.name.trim().length < 3 ? 'Nome muito curto' : 'Apenas letras') : 'Nome é obrigatório';
+    }
+    if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = formData.email.trim() ? 'Email inválido' : 'Email é obrigatório';
+    }
+    if (!formData.password.trim() || formData.password.length < 6) {
+      newErrors.password = formData.password.trim() ? 'Mínimo 6 caracteres' : 'Senha é obrigatória';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     if (Object.keys(errors).length > 0) {
       return;
     }
@@ -155,7 +171,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onRegister }
 
               <div className="bg-white/20 rounded-lg p-3 mb-3">
                 <div className="text-white/80 text-xs mb-0.5">Seu bonus</div>
-                <div className="text-3xl font-bold text-white">R$ 14,70</div>
+                <div className="text-3xl font-bold text-white">R$ 4,90</div>
               </div>
 
               <p className="text-white/80 text-xs flex items-center justify-center gap-2">
@@ -182,7 +198,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onRegister }
                 <span className="text-white font-bold text-sm">CADASTRE-SE E GANHE</span>
               </div>
               <div className="text-2xl font-bold text-white mb-1">
-                R$ 14,70
+                R$ 4,90
               </div>
               <div className="text-gray-400 text-xs">
                 + 3 Raspadinhas Gratis

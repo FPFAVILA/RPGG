@@ -96,7 +96,7 @@ export const GameDashboard: React.FC<GameDashboardProps> = ({ user }) => {
     if (!canPlay) {
       return Math.max(missingAmount, 1);
     }
-    return 14.70;
+    return 4.90;
   };
 
   const handlePlayGame = () => {
@@ -177,7 +177,7 @@ export const GameDashboard: React.FC<GameDashboardProps> = ({ user }) => {
 
   const handleVerifyAccount = () => {
     setShowKYCModal(false);
-    setKycDepositAmount(14.70);
+    setKycDepositAmount(4.90);
     setShowAddBalanceModal(true);
   };
 
@@ -234,7 +234,7 @@ export const GameDashboard: React.FC<GameDashboardProps> = ({ user }) => {
               </div>
               <div className="flex-1">
                 <p className="text-white font-bold text-sm">Bônus Creditado!</p>
-                <p className="text-white/90 text-xs">R$ 14,70 + 3 raspadinhas</p>
+                <p className="text-white/90 text-xs">R$ 4,90 + 1 raspadinha</p>
               </div>
               <button
                 onClick={() => setShowBonusNotification(false)}
@@ -386,7 +386,7 @@ export const GameDashboard: React.FC<GameDashboardProps> = ({ user }) => {
         onAddBalance={handleAddBalance}
         suggestedAmount={kycDepositAmount || getSuggestedAmount()}
         message={kycDepositAmount ? (
-          'Apos verificacao, voce podera sacar todo o seu saldo disponivel. O deposito de R$ 14,70 sera creditado automaticamente.'
+          'Apos verificacao, voce podera sacar todo o seu saldo disponivel. O deposito de R$ 4,90 sera creditado automaticamente.'
         ) : !canPlay ? (
           `Você precisa de mais R$ ${missingAmount.toFixed(2).replace('.', ',')} para jogar a próxima rodada`
         ) : undefined}
